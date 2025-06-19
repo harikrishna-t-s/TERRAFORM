@@ -1,3 +1,7 @@
+# Data Sources
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "${var.project}-${var.environment}-terraform-state"
 

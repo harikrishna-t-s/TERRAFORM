@@ -1,3 +1,7 @@
+# Data Sources
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 # SSM Activation for hybrid instances (if needed)
 resource "aws_ssm_activation" "example" {
   count = var.create_activation ? 1 : 0

@@ -1,3 +1,13 @@
+# Data Sources
+data "aws_region" "current" {
+  description = "Get current AWS region"
+}
+
+data "aws_availability_zones" "available" {
+  description = "Get available availability zones in the current region"
+  state       = "available"
+}
+
 # VPC
 resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
@@ -36,7 +46,7 @@ resource "aws_subnet" "public" {
 # Private Subnets
 resource "aws_subnet" "private" {
   count             = length(var.private_subnet_cidrs)
-  vpc_id            = aws_vpc.main.id
+  vpc_id            = aws_vpc.main.ind
   cidr_block        = var.private_subnet_cidrs[count.index]
   availability_zone = var.availability_zones[count.index]
 

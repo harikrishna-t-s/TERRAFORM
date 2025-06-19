@@ -1,3 +1,8 @@
+# Data Sources
+data "aws_vpc" "selected" {
+  id = var.vpc_id
+}
+
 # ALB Security Group
 resource "aws_security_group" "alb" {
   name        = "${var.environment}-alb-sg"

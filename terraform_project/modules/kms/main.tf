@@ -1,3 +1,7 @@
+# Data Sources
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 locals {
   # Naming conventions
   name_prefix = "${var.project}-${var.environment}"

@@ -1,3 +1,7 @@
+# Data Sources
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 # RDS Subnet Group
 resource "aws_db_subnet_group" "main" {
   name        = "${local.naming.rds}-subnet-group"

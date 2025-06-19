@@ -1,3 +1,6 @@
+# Data Sources
+data "aws_region" "current" {}
+
 # AWS GuardDuty
 resource "aws_guardduty_detector" "main" {
   enable = true
@@ -197,7 +200,4 @@ resource "aws_cloudwatch_metric_alarm" "config_compliance" {
   alarm_actions      = [var.alarm_sns_topic_arn]
 
   tags = var.tags
-}
-
-# Data sources
-data "aws_region" "current" {} 
+} 
